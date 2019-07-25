@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 23,
+    }
+  }
+
+  increment() {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  }
+
+  decrement() {
+    this.setState({
+      counter: this.state.counter - 1,
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        Hello world!
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        count: {this.state.counter}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <button onClick={() => this.increment()}>+1</button>
+        <button onClick={() => this.decrement()}>-1</button>
+      </div>
+    );
+  }
 }
 
 export default App;
