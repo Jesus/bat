@@ -1,2 +1,20 @@
 body {
 }
+
+.board {
+  display: flex;
+}
+.cell {
+  width: 10px;
+  height: 10px;
+  background-color: #efeefe;
+}
+.cell.head {
+  background-color: #d00;
+}
+.cell.tail {
+  background-color: #d55;
+}
+.cell.food {
+  background-color: #00f;
+}
